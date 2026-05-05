@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
       loader.remove(); // remove overlay completely
       document.getElementById("homepage").style.display = "block"; // show content
     }, 1000); // wait for fade animation
-  }, 3000); // loader stays visible for 3 seconds
+  }, 2000); // loader stays visible for 3 seconds
 });
 /* --------------------------------------------------------------------------------------------------------------------- */
 // Initialize the typing animation
