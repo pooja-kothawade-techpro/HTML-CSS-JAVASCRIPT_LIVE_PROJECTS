@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pooja|Portfolio() - Education</title>
+  <link rel="icon" img width="64" height="64" 
+    href="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/64/external-code-virus-and-hacker-xnimrodx-blue-xnimrodx.png" alt="logo">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/footer.css">
+  
+  <style>
+    /* Additional styling for education cards */
+    .education-card {
+      background: var(--bs-body-bg);
+      border-radius: 20px;
+      padding: 1.8rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(41, 119, 236, 0.15);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      height: 100%;
+    }
+    
+    html[data-bs-theme="light"] .education-card {
+      background: #ffffff;
+    }
+    
+    html[data-bs-theme="dark"] .education-card {
+      background: #1a1a1f;
+      border-color: rgba(255,255,255,0.08);
+    }
+    
+    .education-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(41, 119, 236, 0.15);
+      border-color: rgba(41, 119, 236, 0.4);
+    }
+    
+    .date-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #2977ec, #0d6efd);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .institution {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--bs-secondary-color);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    
+    .education-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .grade-badge {
+      display: inline-block;
+      background: rgba(41, 119, 236, 0.12);
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .percentage {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2977ec;
+      margin-top: 0.8rem;
+    }
+    
+    html[data-bs-theme="dark"] .percentage {
+      color: #8bb9fe;
+    }
+    
+    .underline {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #2977ec, #8bb9fe);
+      margin: 0.5rem auto 0;
+      border-radius: 4px;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      color: var(--bs-secondary-color);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .stats-row {
+      background: linear-gradient(135deg, rgba(41,119,236,0.05), rgba(41,119,236,0.02));
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2977ec;
+    }
+    
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--bs-secondary-color);
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader-container" class="d-flex justify-content-center align-items-center vh-100"> 
+    <span class="loader"></span> 
+  </div>
+  
+  <section id="homepage" style="display:none;">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top px-5 slidedown"> 
+      <div class="container-fluid my-3 ms-5">
+        <span class="me-3">
+          <img src="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/64/external-code-virus-and-hacker-xnimrodx-blue-xnimrodx.png" 
+            class="imageGlow glow1 ms-5" alt="logo">
+        </span>
+        <p class="fw-bold fs-2 ms-3 text-capitalize text-body-secondary navbar-brand glow1">
+          Pooja.Kothawade()
+        </p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> 
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarNav"> 
+          <ul class="navbar-nav ms-auto fw-bold me-5"> 
+            <li class="nav-item"><a href="index.html" class="nav-link glow ms-3"><span>Home</span></a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link glow ms-3"><span>About</span></a></li>
+            <li class="nav-item"><a href="resume.html" class="nav-link glow ms-3"><span>Resume</span></a></li>
+            <li class="nav-item"><a href="experience.html" class="nav-link glow ms-3"><span>Experience</span></a></li>
+            <li class="nav-item"><a href="education.html" class="nav-link glow ms-3"><span>Education</span></a></li>
+            <li class="nav-item"><a href="project.html" class="nav-link glow ms-3"><span>Projects</span></a></li>
+            <li class="nav-item"><a href="contact.html" class="btn rounded-pill btn-lg glow ms-3" id="contactBtn">Contact</a></li>
+            <li class="nav-item"><a id="themeToggle" class="btn rounded-circle btn-lg glow ms-3 imageGlow me-5">☀︎</a></li>
+          </ul>
+        </div> 
+      </div> 
+    </nav> 
+    
+    <!-- Education Section -->
+    <section class="ftco-section ftco-no-pb m-5" id="Education-section">
+      <div class="container">
+        <!-- Header -->
+        <div class="row" id="heading">
+          <div class="col-12 text-center">
+            <h1 class="big-4 slidedown imageGlow glow1" style="font-size: 3rem; font-weight: 700;">Education Timeline</h1>
+            <div class="underline"></div>
+            <p class="section-subtitle mt-3">Academic journey & qualifications</p>
+          </div>
+        </div>
+        <br>
+        
+        <!-- Education Cards Grid -->
+        <div class="row g-4">
+          
+          <!-- MCA - Master in Computer Application -->
+          <div class="col-md-6 slidedown-left">
+            <div class="education-card">
+              <span class="date-badge">2022 - 2024</span>
+              <h2 class="glow1">Master in Computer Application</h2>
+              <span class="institution">
+                <i class="bi bi-building me-1"></i> Savitribai Phule Pune University, Pune
+              </span>
+              <div>
+                <span class="grade-badge"><i class="bi bi-star-fill text-warning me-1"></i> First Class</span>
+                <span class="grade-badge"><i class="bi bi-trophy-fill text-warning me-1"></i> CGPA: 6.7/10</span>
+              </div>
+              <p class="percentage mt-3">
+                <i class="bi bi-graph-up me-1"></i> Percentage: 67.14%
+              </p>
+              <p class="text-body-secondary small mt-2 mb-0">
+                <i class="bi bi-code-slash me-1"></i> Specialized in Software Development, Advanced Java, Database Management Systems
+              </p>
+            </div>
+          </div>
+          
+          <!-- B.Sc Statistics -->
+          <div class="col-md-6 slidedown-right">
+            <div class="education-card">
+              <span class="date-badge">2018 - 2021</span>
+              <h2 class="glow1">Bachelor of Science (Statistics)</h2>
+              <span class="institution">
+                <i class="bi bi-building me-1"></i> KTHM College, Nashik
+              </span>
+              <div>
+                <span class="grade-badge"><i class="bi bi-star-fill text-warning me-1"></i> First Class</span>
+                <span class="grade-badge"><i class="bi bi-bar-chart-fill text-warning me-1"></i> Statistics Major</span>
+              </div>
+              <p class="percentage mt-3">
+                <i class="bi bi-graph-up me-1"></i> Percentage: 66.89%
+              </p>
+              <p class="text-body-secondary small mt-2 mb-0">
+                <i class="bi bi-calculator-fill me-1"></i> Strong foundation in Statistical Analysis, Data Interpretation, and Mathematical Modeling
+              </p>
+            </div>
+          </div>
+          
+          <!-- HSC - Higher Secondary Certificate -->
+          <div class="col-md-6 slidedown-left">
+            <div class="education-card">
+              <span class="date-badge">2017 - 2018</span>
+              <h2 class="glow1">Higher Secondary Certificate (HSC)</h2>
+              <span class="institution">
+                <i class="bi bi-building me-1"></i> Maharashtra State Board, Pimpalner
+              </span>
+              <div>
+                <span class="grade-badge"><i class="bi bi-star-fill text-warning me-1"></i> First Class with Distinction</span>
+                <span class="grade-badge"><i class="bi bi-flask-fill text-warning me-1"></i> Science Stream</span>
+              </div>
+              <p class="percentage mt-3">
+                <i class="bi bi-graph-up me-1"></i> Percentage: 84.62%
+              </p>
+              <p class="text-body-secondary small mt-2 mb-0">
+                <i class="bi bi-pencil-fill me-1"></i> Strong academic performance with focus on Mathematics and Sciences
+              </p>
+            </div>
+          </div>
+          
+          <!-- SSC - Secondary School Certificate -->
+          <div class="col-md-6 slidedown-right">
+            <div class="education-card">
+              <span class="date-badge">2014 - 2016</span>
+              <h2 class="glow1">Secondary School Certificate (SSC)</h2>
+              <span class="institution">
+                <i class="bi bi-building me-1"></i> Maharashtra State Board, Pimpalner
+              </span>
+              <div>
+                <span class="grade-badge"><i class="bi bi-star-fill text-warning me-1"></i> First Class with Distinction</span>
+                <span class="grade-badge"><i class="bi bi-award-fill text-warning me-1"></i> High Achiever</span>
+              </div>
+              <p class="percentage mt-3">
+                <i class="bi bi-graph-up me-1"></i> Percentage: 91.60%
+              </p>
+              <p class="text-body-secondary small mt-2 mb-0">
+                <i class="bi bi-emoji-smile me-1"></i> Outstanding academic performance with excellence in all subjects
+              </p>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Statistics Summary Row -->
+        <div class="stats-row">
+          <div class="row">
+            <div class="col-md-3 col-6 stat-item">
+              <div class="stat-number">4</div>
+              <div class="stat-label">Degrees & Certifications</div>
+            </div>
+            <div class="col-md-3 col-6 stat-item">
+              <div class="stat-number">7+</div>
+              <div class="stat-label">Years of Academic Excellence</div>
+            </div>
+            <div class="col-md-3 col-6 stat-item">
+              <div class="stat-number">91.60%</div>
+              <div class="stat-label">Highest Achievement (SSC)</div>
+            </div>
+            <div class="col-md-3 col-6 stat-item">
+              <div class="stat-number">First Class</div>
+              <div class="stat-label">Consistent Performance</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Key Courses & Specializations -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="education-card text-center">
+              <h3 class="glow1 mb-3">
+                <i class="bi bi-book-heart-fill me-2 text-primary"></i>
+                Key Specializations & Courses
+              </h3>
+              <div class="d-flex flex-wrap justify-content-center gap-2">
+                <span class="grade-badge">📊 Statistical Analysis</span>
+                <span class="grade-badge">💻 Software Development</span>
+                <span class="grade-badge">🗄️ Database Management</span>
+                <span class="grade-badge">📈 Data Interpretation</span>
+                <span class="grade-badge">📐 Mathematical Modeling</span>
+                <span class="grade-badge">🎯 Advanced Java</span>
+                <span class="grade-badge">🌐 Web Technologies</span>
+                <span class="grade-badge">📱 Application Development</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Footer will be loaded here automatically -->
+  </section>
+  
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/footer-loader.js"></script>
+  
+</body>
+</html>

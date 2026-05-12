@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pooja|Portfolio() - Experience</title>
+  <link rel="icon" img width="64" height="64" 
+    href="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/64/external-code-virus-and-hacker-xnimrodx-blue-xnimrodx.png" alt="logo">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/footer.css">
+  
+  <style>
+    /* Additional styling for experience cards */
+    .resume-wrap {
+      background: var(--bs-body-bg);
+      border-radius: 20px;
+      padding: 1.8rem;
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 1px solid rgba(41, 119, 236, 0.15);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    html[data-bs-theme="light"] .resume-wrap {
+      background: #ffffff;
+    }
+    
+    html[data-bs-theme="dark"] .resume-wrap {
+      background: #1a1a1f;
+      border-color: rgba(255,255,255,0.08);
+    }
+    
+    .resume-wrap:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(41, 119, 236, 0.15);
+      border-color: rgba(41, 119, 236, 0.4);
+    }
+    
+    .date {
+      display: inline-block;
+      background: linear-gradient(135deg, #2977ec, #0d6efd);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .position {
+      display: block;
+      font-size: 1rem;
+      color: var(--bs-secondary-color);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    
+    .resume-wrap h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .resume-wrap ul {
+      padding-left: 1.2rem;
+      margin-top: 0.8rem;
+    }
+    
+    .resume-wrap li {
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+      color: var(--bs-body-color);
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(41, 119, 236, 0.15);
+    }
+    
+    .tech-badge {
+      background: rgba(41, 119, 236, 0.12);
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #2977ec;
+    }
+    
+    html[data-bs-theme="dark"] .tech-badge {
+      background: rgba(41, 119, 236, 0.2);
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      color: var(--bs-secondary-color);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .underline {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #2977ec, #8bb9fe);
+      margin: 0.5rem auto 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader-container" class="d-flex justify-content-center align-items-center vh-100"> 
+    <span class="loader"></span> 
+  </div>
+  
+  <section id="homepage" style="display:none;">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top px-5 slidedown"> 
+      <div class="container-fluid my-3 ms-5">
+        <span class="me-3">
+          <img src="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/64/external-code-virus-and-hacker-xnimrodx-blue-xnimrodx.png" 
+            class="imageGlow glow1 ms-5" alt="logo">
+        </span>
+        <p class="fw-bold fs-2 ms-3 text-capitalize text-body-secondary navbar-brand glow1">
+          Pooja.Kothawade()
+        </p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> 
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarNav"> 
+          <ul class="navbar-nav ms-auto fw-bold me-5"> 
+            <li class="nav-item"><a href="index.html" class="nav-link glow ms-3"><span>Home</span></a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link glow ms-3"><span>About</span></a></li>
+            <li class="nav-item"><a href="resume.html" class="nav-link glow ms-3"><span>Resume</span></a></li>
+            <li class="nav-item"><a href="experience.html" class="nav-link glow ms-3"><span>Experience</span></a></li>
+            <li class="nav-item"><a href="education.html" class="nav-link glow ms-3"><span>Education</span></a></li>
+            <li class="nav-item"><a href="project.html" class="nav-link glow ms-3"><span>Projects</span></a></li>
+            <li class="nav-item"><a href="contact.html" class="btn rounded-pill btn-lg glow ms-3" id="contactBtn">Contact</a></li>
+            <li class="nav-item"><a id="themeToggle" class="btn rounded-circle btn-lg glow ms-3 imageGlow me-5">☀︎</a></li>
+          </ul>
+        </div> 
+      </div> 
+    </nav> 
+    
+    <!-- Experience Section -->
+    <div class="container my-5">
+      <!-- Header -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="big-4 slidedown imageGlow glow1" style="font-size: 3rem; font-weight: 700;">Work Experience</h1>
+          <div class="underline"></div>
+          <p class="section-subtitle mt-3">Professional journey & technical expertise</p>
+        </div>
+      </div>
+      
+      <br>
+      
+      <!-- Experience Cards Row -->
+      <div class="row g-4">
+        
+        <!-- Experience 1: SPCL Infotech (Java Developer) -->
+        <div class="col-md-6 slidedown-left">
+          <div class="resume-wrap">
+            <span class="date">Feb 2024 – July 2026</span>
+            <h2 class="glow1">Jr.Java Full Stack Developer</h2>
+            <span class="position">SPCL Infotech Services Pvt. Ltd.</span>
+            <ul>
+              <li>Built and maintained scalable web/cloud applications using Java, Spring Boot, Angular, and MySQL.</li>
+              <li>Implemented JWT-based authentication and secure API communication for enterprise applications.</li>
+              <li>Optimized MySQL queries and schema design to improve database performance by 30%.</li>
+              <li>Collaborated with cross-functional teams to align UI with backend services seamlessly.</li>
+              <li>Contributed to Agile ceremonies, sprint planning, and project documentation.</li>
+              <li>Successfully delivered live projects: ShivayPlumbers, ASFinancial Services.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-badge">Java</span>
+              <span class="tech-badge">Spring Boot</span>
+              <span class="tech-badge">Angular</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">JWT</span>
+              <span class="tech-badge">REST APIs</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Experience 2: Infomanav (UI/UX Developer) -->
+        <div class="col-md-6 slidedown-right">
+          <div class="resume-wrap">
+            <span class="date">Sep 2021 – Nov 2022</span>
+            <h2 class="glow1">UI/UX Developer</h2>
+            <span class="position">Infomanav, Nashik, India</span>
+            <ul>
+              <li>Contributed to 10+ projects, creating wireframes, flowcharts, architecture & database diagrams.</li>
+              <li>Designed wireframes and database diagrams ensuring clarity in architecture and smoother implementation.</li>
+              <li>Created banners, websites, and communication assets using Adobe Photoshop and Illustrator.</li>
+              <li>Partnered with developers and QA teams to align system design with usability requirements.</li>
+              <li>Reduced design iteration cycles by 15% through improved stakeholder engagement.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-badge">Adobe Photoshop</span>
+              <span class="tech-badge">Adobe Illustrator</span>
+              <span class="tech-badge">Wireframing</span>
+              <span class="tech-badge">Figma</span>
+              <span class="tech-badge">UI/UX Design</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Second Row of Experience -->
+      <div class="row g-4 mt-2">
+        
+        <!-- Experience 3: Java Full Stack Training / Internship -->
+        <div class="col-md-6 slidedown-left">
+          <div class="resume-wrap">
+            <span class="date">2023 – 2024</span>
+            <h2 class="glow1"> Java Full Stack Trainee</h2>
+            <span class="position">Vinsys / Training Program</span>
+            <ul>
+              <li>Completed intensive training in Java, Spring Boot, REST APIs, SQL, Angular, and Deployment.</li>
+              <li>Built and deployed mini projects demonstrating full-stack development capabilities.</li>
+              <li>Participated in hackathon challenge, developing a Timer App with real-time functionality.</li>
+              <li>Earned Java Full Stack Developer certificate through rigorous assessment.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-badge">Core Java</span>
+              <span class="tech-badge">Spring Boot</span>
+              <span class="tech-badge">Angular</span>
+              <span class="tech-badge">REST APIs</span>
+              <span class="tech-badge">SQL</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Experience 4: Key Achievements & Skills Highlight -->
+        <div class="col-md-6 slidedown-right">
+          <div class="resume-wrap">
+            <span class="date">Certifications</span>
+            <h2 class="glow1">Professional Certifications</h2>
+            <span class="position">Continuous Learning & Development</span>
+            <ul>
+              <li><strong>Oracle Dev Gym – Certificate of Excellence</strong> — Scored 91% in "Databases for Developers: Foundations" course by Chris Saxon.</li>
+              <li><strong>Codecademy Certifications:</strong> REST APIs with Spring & Java, Angular, Git & GitHub, JavaScript, HTML/CSS, Learn SQL, Intermediate Java.</li>
+              <li><strong>TCS NQT Certification</strong> (Dec 2024) — 59.24 percentile.</li>
+              <li><strong>Agile Scrum Master Training</strong> — Certified in Agile methodologies.</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-badge">Agile Scrum</span>
+              <span class="tech-badge">Git & GitHub</span>
+              <span class="tech-badge">REST APIs</span>
+              <span class="tech-badge">SQL Expert</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Skills Summary Section -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="resume-wrap text-center" style="background: linear-gradient(135deg, rgba(41,119,236,0.05), rgba(41,119,236,0.02));">
+            <h3 class="glow1 mb-3"><i class="bi bi-star-fill text-warning me-2"></i>Core Competencies</h3>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">☕ Core Java</span>
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">🚀 Advanced Java</span>
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">🗄️ SQL/RDBMS</span>
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">🎯 OOP</span>
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">🐞 Debugging</span>
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">📊 Database Management</span>
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">🤝 Team Collaboration</span>
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">⚡ Adaptability</span>
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">📚 Quick Learning</span>
+              <span class="tech-badge" style="padding: 0.4rem 1.2rem;">🏆 Problem-Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Languages & Achievements Row -->
+      <div class="row g-4 mt-3">
+        <div class="col-md-6 slidedown-left">
+          <div class="resume-wrap">
+            <h3 class="glow1 mb-3"><i class="bi bi-translate me-2"></i>Languages</h3>
+            <div class="row">
+              <div class="col-6">
+                <p><strong>English</strong> <br><span class="small text-body-secondary">Professional Working Proficiency</span></p>
+                <p><strong>Marathi</strong> <br><span class="small text-body-secondary">Native Speaker</span></p>
+              </div>
+              <div class="col-6">
+                <p><strong>Hindi</strong> <br><span class="small text-body-secondary">Fluent Speaker</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 slidedown-right">
+          <div class="resume-wrap">
+            <h3 class="glow1 mb-3"><i class="bi bi-trophy-fill me-2 text-warning"></i>Achievements</h3>
+            <ul>
+              <li>Division-level chess tournaments — showcasing strategic thinking and adaptability.</li>
+              <li>Oracle Dev Gym – Certificate of Excellence (91% in Databases for Developers).</li>
+              <li>Successfully completed Java Full Stack Developer certification at Vinsys hackathon challenge.</li>
+              <li>Multiple live project deployments (ShivayPlumbers, ASFinancial Services).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Footer will be loaded here automatically -->
+  </section>
+  
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/footer-loader.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,269 @@
+/* footer.css - Complete styling for portfolio footer */
+
+/* ============== FOOTER DESIGN ================ */
+.site-footer {
+  background: var(--bs-dark-bg-subtle);
+  border-top: 1px solid rgba(41, 119, 236, 0.2);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+html[data-bs-theme="light"] .site-footer {
+  background: #f8fafd;
+  box-shadow: 0 -8px 25px rgba(0,0,0,0.02);
+}
+
+html[data-bs-theme="dark"] .site-footer {
+  background: #0f0f12;
+  border-top-color: rgba(255,255,255,0.08);
+}
+
+/* subtle animated wave/glow line at the top */
+.footer-glow-line {
+  height: 3px;
+  width: 100px;
+  background: linear-gradient(90deg, #2977ec, #8bb9fe, #2977ec);
+  margin: 0 auto 2rem auto;
+  border-radius: 3px;
+  opacity: 0.7;
+  transition: width 0.3s ease;
+}
+
+.site-footer:hover .footer-glow-line {
+  width: 180px;
+}
+
+/* footer headings */
+.footer-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 1.4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-heading:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 45px;
+  height: 2.5px;
+  background: #2977ec;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.footer-col:hover .footer-heading:after {
+  width: 65px;
+}
+
+/* footer links & text */
+.footer-link {
+  text-decoration: none;
+  color: var(--bs-secondary-color);
+  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.footer-link i, .footer-link .bi {
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+
+html[data-bs-theme="light"] .footer-link:hover {
+  color: #2977ec;
+  transform: translateX(6px);
+}
+
+html[data-bs-theme="dark"] .footer-link:hover {
+  color: #8bb9fe;
+  transform: translateX(6px);
+}
+
+.footer-link:hover i {
+  transform: scale(1.1);
+}
+
+/* social icon buttons */
+.social-footer-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bs-body-bg);
+  transition: all 0.25s ease;
+  margin-right: 0.6rem;
+  border: 1px solid rgba(41, 119, 236, 0.3);
+  color: #2977ec;
+  text-decoration: none;
+}
+
+html[data-bs-theme="dark"] .social-footer-btn {
+  background: #1e1e2a;
+  border-color: rgba(255,255,255,0.15);
+  color: #cbd5ff;
+}
+
+.social-footer-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px -7px rgba(41,119,236,0.5);
+  background: #2977ec;
+  color: white !important;
+  border-color: #2977ec;
+}
+
+html[data-bs-theme="light"] .social-footer-btn:hover {
+  background: #2977ec;
+  color: white;
+}
+
+html[data-bs-theme="dark"] .social-footer-btn:hover {
+  background: #2977ec;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(65, 132, 245, 0.7);
+}
+
+/* copyright bottom bar */
+.copyright-bar {
+  background: rgba(0,0,0,0.02);
+  border-top: 1px solid rgba(41, 119, 236, 0.12);
+  padding: 1.2rem 0;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+html[data-bs-theme="dark"] .copyright-bar {
+  background: rgba(255,255,255,0.02);
+  border-top-color: rgba(255,255,255,0.05);
+}
+
+/* ========== NEW RESPONSIVE STYLES ========== */
+
+/* GIF Container Styling */
+.footer-gif-container {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer-cute-gif {
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  border-radius: 20px;
+  max-width: 100%;
+  height: auto;
+  background: rgba(41, 119, 236, 0.05);
+  padding: 0.5rem;
+}
+
+/* Light mode GIF container */
+html[data-bs-theme="light"] .footer-cute-gif {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+/* Dark mode GIF container */
+html[data-bs-theme="dark"] .footer-cute-gif {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hover animation for GIF */
+.footer-cute-gif:hover {
+  transform: scale(1.02) translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Pulse animation for the GIF on page load */
+@keyframes softPulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.footer-cute-gif {
+  animation: softPulse 0.5s ease-out;
+}
+
+/* quick responsive adjustments */
+@media (max-width: 768px) {
+  .footer-heading {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  .social-footer-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .footer-cute-gif {
+    max-width: 120px;
+    margin: 0 auto;
+    display: block;
+  }
+  .footer-gif-container {
+    text-align: center;
+  }
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .footer-cute-gif {
+    max-width: 100px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .footer-cute-gif {
+    max-width: 85%;
+  }
+}
+
+/* ink flow inspiration for small footer details */
+.footer-badge {
+  background: rgba(41, 119, 236, 0.362);
+  padding: 0.2rem 0.7rem;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* scroll to top button animation */
+#scrollTopFooter {
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#scrollTopFooter:hover {
+  transform: translateY(-3px);
+  color: #2977ec !important;
+}
+/* Add this to your existing footer.css */
+
+/* Responsive adjustment for the about paragraph width */
+@media (max-width: 992px) {
+  .footer-col p[style*="width: 75%"] {
+    width: 100% !important;
+  }
+}
+
+/* For better tablet view */
+@media (min-width: 769px) and (max-width: 992px) {
+  .footer-col p[style*="width: 75%"] {
+    width: 90% !important;
+  }
+}

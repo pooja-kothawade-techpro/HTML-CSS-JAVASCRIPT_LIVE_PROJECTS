@@ -1,0 +1,185 @@
+ 
+ /* ------------------------------------about.css----global-css----------------------------------------------------------------------------- */
+
+ /* Background image styling for about page */
+#about-section {
+  position: relative;
+  background: none; /* Remove the background from main element */
+}
+
+#about-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  /* Background image */
+  background-image:
+  
+    /* transparency fade layer */
+    
+  linear-gradient(
+      to bottom right,
+      rgba(255,255,255,0.91) 50%,
+      rgb(255, 255, 255,0.9) 1%,
+      rgba(255, 255, 255, 0.76) 20%,
+      rgba(255,255,255,0.3) 30%,
+      rgba(255,255,255,0) 75%,    /* Reaches 0 opacity earlier */
+      rgba(255,255,255,0) 100%    /* Bottom-right fully transparent */
+    ),
+    /* NEW: Bottom-left to top-right diagonal gradient for more white at left bottom */
+    linear-gradient(
+      to top right,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.85) 20%,
+      rgba(255, 255, 255, 0.6) 40%,
+      transparent 60%,
+      transparent 100%
+    ),
+
+    /* actual image */
+    url('../assets/images/good-bg-4.png');
+
+  background-repeat: no-repeat;
+  background-position: right 80px center;
+  background-size: auto 900px;
+
+  background-attachment: scroll;
+  opacity: 0.8;
+
+  z-index: -2;
+  pointer-events: none;
+}
+
+#about-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+/* Content container - top layer */
+#about-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ----------------------------------------------------------------- */
+html[data-bs-theme="dark"] #about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../assets/images/dark-bg.jpeg');
+  background-repeat: no-repeat;
+  background-position: right 80px center;
+  background-size: auto 900px;
+  background-attachment: scroll;
+  opacity: 0.2; 
+  z-index: -1;
+  pointer-events: none;
+}
+/* Add gradient overlay to darken left side for dark theme */
+html[data-bs-theme="dark"] #about-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom right, 
+    rgba(0, 0, 0, 0.85) 0%, 
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+ /* --------------------------------------about-heading---------------------------------------------------------------------------- */
+
+ /* New Glow Effect with margin awareness */
+.glow-m4 {
+  display: inline-block;       /* ensures glow wraps content neatly */
+  margin: 0rem;              /* same as Bootstrap m-4 */
+  padding: 1rem 1rem 1rem 1rem;    /* inner spacing so background shows //top right bottom left*/
+  border-radius: 10px;
+  background-color: transparent;
+  transition:  0.3s ease-in-out;
+}
+
+/* Dark mode glow */
+html[data-bs-theme="dark"] .glow-m4:hover {
+  background-color: #2977ecb5;
+  box-shadow: 0 0 15px rgba(248, 248, 248, 0.9);
+  color: #ffffff;
+
+}
+
+/* Light mode glow */
+html[data-bs-theme="light"] .glow-m4:hover {
+  background-color: #2977ecb5;
+  box-shadow: 0 0 25px rgba(41, 119, 236, 0.9);
+  color: #ffffff;
+  
+}
+ /* --------------------------------------------------------------------------------------------------------------------- */
+ /* -----container-=-slidedown-left-+-slidedown-right------------------------------------------------------------------------------------------------------ */
+
+#about-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+ /* --------------------------------------------------------------------------------------------------------------------- */
+/* --------------------------------------about-page-animation---------------------------------------------------------------------------- */
+/* About section animations */
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------Skills--Section--Progress--Bar---------------------------------------------------------------------------- */
+/* Slow ink-like animation */
+.progress-bar-animated {
+  animation: progress-bar-stripes 4s linear infinite; /* slower stripes */
+  transition: width 6s ease-in-out; /* slower fill */
+}
+
+/* Stripes always animate instantly */ 
+
+.progress-bar-striped.progress-bar-animated { 
+    animation: progress-bar-stripes 2s linear infinite; /* stripes moving */ 
+} 
+/* Optional: faster stripes on hover */
+ .progress-bar-striped.progress-bar-animated:hover {
+    animation: progress-bar-stripes 0.5s linear infinite; /* fast stripes */ 
+    transition: width 2s ease-in-out; /* faster ink fill */ }
+
+.progress-bar.ink-flow {
+  transition: width 6s ease-in-out;
+  background: linear-gradient(to right, #0d6efd 30%, #004080 100%);
+  background-size: 200% 100%;
+  animation: inkMove 6s forwards;
+}
+
+@keyframes inkMove {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+
+
+ /* --------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------- */
+ .slidedown-left .progress {
+    width: 90%;
+}
+
+		

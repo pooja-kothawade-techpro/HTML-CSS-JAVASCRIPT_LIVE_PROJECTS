@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pooja|Portfolio() - Resume</title>
+  <link rel="icon" img width="64" height="64" 
+    href="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/64/external-code-virus-and-hacker-xnimrodx-blue-xnimrodx.png" alt="logo">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/footer.css">
+  
+  <style>
+    /* Resume specific styles */
+    .resume-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bs-body-bg);
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .resume-header {
+      background: linear-gradient(135deg, #2977ec, #0d6efd);
+      padding: 2.5rem;
+      color: white;
+      position: relative;
+    }
+    
+    .resume-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .resume-header .title {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-info-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .contact-info-header a {
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.3s;
+    }
+    
+    .contact-info-header a:hover {
+      opacity: 0.8;
+    }
+    
+    .resume-body {
+      padding: 2.5rem;
+    }
+    
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #2977ec;
+      display: inline-block;
+      color: var(--bs-heading-color);
+    }
+    
+    .job-card, .education-item, .project-item {
+      margin-bottom: 1.8rem;
+    }
+    
+    .job-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #2977ec;
+      margin-bottom: 0.3rem;
+    }
+    
+    .company-name {
+      font-weight: 600;
+      color: var(--bs-secondary-color);
+      margin-bottom: 0.3rem;
+    }
+    
+    .job-date {
+      font-size: 0.85rem;
+      color: var(--bs-secondary-color);
+      margin-bottom: 0.8rem;
+    }
+    
+    .skill-tag {
+      display: inline-block;
+      background: rgba(41, 119, 236, 0.12);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin: 0.2rem;
+      transition: all 0.3s;
+    }
+    
+    .skill-tag:hover {
+      background: #2977ec;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .sidebar-section {
+      background: rgba(41, 119, 236, 0.03);
+      padding: 1.5rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .sidebar-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #2977ec;
+    }
+    
+    .cert-badge {
+      background: linear-gradient(135deg, #2977ec10, #0d6efd05);
+      padding: 0.8rem;
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+      border-left: 3px solid #2977ec;
+    }
+    
+    .download-area {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(41,119,236,0.05), rgba(41,119,236,0.02));
+      border-radius: 20px;
+      margin-top: 2rem;
+    }
+    
+    .btn-download {
+      background: linear-gradient(135deg, #2977ec, #0d6efd);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+    }
+    
+    .btn-download:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(41,119,236,0.4);
+      color: white;
+    }
+    
+    .achievement-item {
+      display: flex;
+      align-items: start;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .achievement-icon {
+      color: #2977ec;
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+    }
+    
+    hr {
+      margin: 1.5rem 0;
+      opacity: 0.1;
+    }
+    
+    @media (max-width: 768px) {
+      .resume-header {
+        padding: 1.5rem;
+      }
+      .resume-body {
+        padding: 1.5rem;
+      }
+      .contact-info-header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader-container" class="d-flex justify-content-center align-items-center vh-100"> 
+    <span class="loader"></span> 
+  </div>
+  
+  <section id="homepage" style="display:none;">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top px-5 slidedown"> 
+      <div class="container-fluid my-3 ms-5">
+        <span class="me-3">
+          <img src="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/64/external-code-virus-and-hacker-xnimrodx-blue-xnimrodx.png" 
+            class="imageGlow glow1 ms-5" alt="logo">
+        </span>
+        <p class="fw-bold fs-2 ms-3 text-capitalize text-body-secondary navbar-brand glow1">
+          Pooja.Kothawade()
+        </p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> 
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarNav"> 
+          <ul class="navbar-nav ms-auto fw-bold me-5"> 
+            <li class="nav-item"><a href="index.html" class="nav-link glow ms-3"><span>Home</span></a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link glow ms-3"><span>About</span></a></li>
+            <li class="nav-item"><a href="resume.html" class="nav-link glow ms-3"><span>Resume</span></a></li>
+            <li class="nav-item"><a href="experience.html" class="nav-link glow ms-3"><span>Experience</span></a></li>
+            <li class="nav-item"><a href="education.html" class="nav-link glow ms-3"><span>Education</span></a></li>
+            <li class="nav-item"><a href="project.html" class="nav-link glow ms-3"><span>Projects</span></a></li>
+            <li class="nav-item"><a href="contact.html" class="btn rounded-pill btn-lg glow ms-3" id="contactBtn">Contact</a></li>
+            <li class="nav-item"><a id="themeToggle" class="btn rounded-circle btn-lg glow ms-3 imageGlow me-5">☀︎</a></li>
+          </ul>
+        </div> 
+      </div> 
+    </nav> 
+    
+    <!-- Resume Section -->
+    <section class="ftco-section ftco-no-pb" id="resume-section">
+      <div class="container my-5">
+        
+        <!-- Professional Resume Card -->
+        <div class="resume-container">
+          
+          <!-- Header Section -->
+          <div class="resume-header">
+            <h1>POOJA KOTHAWADE</h1>
+            <div class="title">Java Developer | Full Stack Developer | Data Analyst</div>
+            <div class="contact-info-header">
+              <a href="mailto:kothawadepooja25@gmail.com"><i class="bi bi-envelope-fill"></i> kothawadepooja25@gmail.com</a>
+              <a href="tel:+919373708692"><i class="bi bi-telephone-fill"></i> +91 93737 08692</a>
+              <span><i class="bi bi-geo-alt-fill"></i> Pune, India</span>
+              <a href="https://github.com/pooja123-kothawade" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://www.linkedin.com/in/pooja-kothawade-techpro/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+          </div>
+          
+          <!-- Body Section -->
+          <div class="resume-body">
+           
+            
+            <hr>
+            
+            <!-- Download Area -->
+            <div class="download-area">
+              <div class="icon mb-3">
+                <button class="btn btn-light rounded-circle p-3 imageGlow glow1" 
+                  onclick="downloadResume()" 
+                  style="width: 70px; height: 70px; display: inline-flex; align-items: center; justify-content: center; border: 2px solid #2977ec;">
+                  <i class="bi bi-download" style="font-size: 32px; color: #2977ec;"></i>
+                </button>
+              </div>
+              <h4 class="glow1">Ready to Download?</h4>
+              <p class="text-body-secondary">Get my complete resume in PDF format</p>
+              <a href="https://drive.google.com/file/d/15mjq76UJv-G_de7Wp2havKkGb4ECBCNA/view?usp=sharing" 
+                class="btn btn-download" target="_blank">
+                <i class="bi bi-file-pdf-fill me-2"></i> Download Full Resume (PDF)
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+  </section>
+  
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/footer-loader.js"></script>
+  
+  <script>
+    function downloadResume() {
+      window.open('https://drive.google.com/file/d/15mjq76UJv-G_de7Wp2havKkGb4ECBCNA/view?usp=sharing', '_blank');
+    }
+  </script>
+  
+</body>
+</html>

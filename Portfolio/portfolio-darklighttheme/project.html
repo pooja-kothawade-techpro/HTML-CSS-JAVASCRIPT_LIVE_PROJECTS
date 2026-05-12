@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pooja|Portfolio() - Projects</title>
+  <link rel="icon" img width="64" height="64" 
+    href="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/64/external-code-virus-and-hacker-xnimrodx-blue-xnimrodx.png" alt="logo">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/footer.css">
+  
+  <style>
+    /* Project card enhancements */
+    .project-card {
+      background: var(--bs-body-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 1px solid rgba(41, 119, 236, 0.15);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    html[data-bs-theme="light"] .project-card {
+      background: #ffffff;
+    }
+    
+    html[data-bs-theme="dark"] .project-card {
+      background: #1a1a1f;
+      border-color: rgba(255,255,255,0.08);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(41, 119, 236, 0.15);
+      border-color: rgba(41, 119, 236, 0.4);
+    }
+    
+    .project-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      transition: transform 0.5s ease;
+    }
+    
+    .project-card:hover .project-img {
+      transform: scale(1.05);
+    }
+    
+    .img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(41,119,236,0.8), rgba(13,110,253,0.6));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .project-card:hover .img-overlay {
+      opacity: 1;
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    
+    .project-title a {
+      color: var(--bs-heading-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .project-title a:hover {
+      color: #2977ec;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .tech-tag {
+      background: rgba(41, 119, 236, 0.12);
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #2977ec;
+    }
+    
+    html[data-bs-theme="dark"] .tech-tag {
+      background: rgba(41, 119, 236, 0.2);
+      color: #8bb9fe;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(41, 119, 236, 0.15);
+    }
+    
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+      color: #2977ec;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .project-link:hover {
+      transform: translateX(3px);
+      color: #0d6efd;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #2977ec, #0d6efd);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .stats-banner {
+      background: linear-gradient(135deg, rgba(41,119,236,0.05), rgba(41,119,236,0.02));
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2977ec;
+    }
+    
+    @media (max-width: 768px) {
+      .project-img {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader-container" class="d-flex justify-content-center align-items-center vh-100"> 
+    <span class="loader"></span> 
+  </div>
+  
+  <section id="homepage" style="display:none;">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top px-5 slidedown"> 
+      <div class="container-fluid my-3 ms-5">
+        <span class="me-3">
+          <img src="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/64/external-code-virus-and-hacker-xnimrodx-blue-xnimrodx.png" 
+            class="imageGlow glow1 ms-5" alt="logo">
+        </span>
+        <p class="fw-bold fs-2 ms-3 text-capitalize text-body-secondary navbar-brand glow1">
+          Pooja.Kothawade()
+        </p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> 
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarNav"> 
+          <ul class="navbar-nav ms-auto fw-bold me-5"> 
+            <li class="nav-item"><a href="index.html" class="nav-link glow ms-3"><span>Home</span></a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link glow ms-3"><span>About</span></a></li>
+            <li class="nav-item"><a href="resume.html" class="nav-link glow ms-3"><span>Resume</span></a></li>
+            <li class="nav-item"><a href="experience.html" class="nav-link glow ms-3"><span>Experience</span></a></li>
+            <li class="nav-item"><a href="education.html" class="nav-link glow ms-3"><span>Education</span></a></li>
+            <li class="nav-item"><a href="project.html" class="nav-link glow ms-3"><span>Projects</span></a></li>
+            <li class="nav-item"><a href="contact.html" class="btn rounded-pill btn-lg glow ms-3" id="contactBtn">Contact</a></li>
+            <li class="nav-item"><a id="themeToggle" class="btn rounded-circle btn-lg glow ms-3 imageGlow me-5">☀︎</a></li>
+          </ul>
+        </div> 
+      </div> 
+    </nav>
+    
+    <!-- Projects Section -->
+    <section class="ftco-section" id="project-section">
+      <div class="container">
+        
+        <!-- Header -->
+        <div class="row justify-content-center mt-5 mb-5 pb-3">
+          <div class="col-md-8 heading-section text-center ftco-animate">
+            <span class="section-badge imageGlow glow1"><i class="bi bi-code-square me-2"></i>My Projects</span>
+            <h1 class="big big-2 imageGlow glow1" style="font-size: 3rem; font-weight: 700;">Featured Projects</h1>
+            <h2 class="mb-3 glow1">Building innovative solutions</h2>
+            <p class="typewriter text-body-secondary">Showcasing my work in Full Stack Development, Java, Spring Boot, and Angular</p>
+          </div>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div class="row g-4">
+          
+          <!-- Project 1: Online Tender Application -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="project-card w-100">
+              <div class="project-img" style="background-image: url('images/tender_system.jpeg'); position: relative;">
+                <div class="img-overlay">
+                  <i class="bi bi-github" style="font-size: 2rem; color: white;"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/pooja123-kothawade/Online_tender_application" target="_blank">
+                    Online Tender Application
+                  </a>
+                </h3>
+                <p class="text-body-secondary small">Developed a multi-page responsive bidding website featuring Home, Menu, About Us, and Contact pages. Focused on clean UI design, structured layout, and user-friendly navigation.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Angular</span>
+                  <span class="tech-tag">Spring Boot</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">JWT</span>
+                  <span class="tech-tag">REST API</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/pooja123-kothawade/Online_tender_application" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 2: Dining Review API -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="project-card w-100">
+              <div class="project-img" style="background-image: url('images/proj_4.png'); position: relative; background-size: cover; background-position: center;">
+                <div class="img-overlay">
+                  <i class="bi bi-code-slash" style="font-size: 2rem; color: white;"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/pooja123-kothawade" target="_blank">
+                    Dining Review API
+                  </a>
+                </h3>
+                <p class="text-body-secondary small">Developed RESTful APIs for a dining review system with full CRUD functionality. Used Spring Data JPA and followed REST conventions for clean API design.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">Spring Boot</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">JPA</span>
+                  <span class="tech-tag">REST API</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/pooja123-kothawade" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 3: Angular Day Planner -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="project-card w-100">
+              <div class="project-img" style="background-image: url('images/proj_5.png'); position: relative;">
+                <div class="img-overlay">
+                  <i class="bi bi-calendar-check" style="font-size: 2rem; color: white;"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/pooja123-kothawade" target="_blank">
+                    Angular Day Planner
+                  </a>
+                </h3>
+                <p class="text-body-secondary small">Created a day planner app with custom pipes and directives. Used Angular's two-way data binding to manage dynamic task inputs efficiently.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Angular</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">HTML/CSS</span>
+                  <span class="tech-tag">Bootstrap</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/pooja123-kothawade" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 4: Excursion Project -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="project-card w-100">
+              <div class="project-img" style="background-image: url('images/proj_4.png'); position: relative;">
+                <div class="img-overlay">
+                  <i class="bi bi-tree-fill" style="font-size: 2rem; color: white;"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://pooja123-kothawade.github.io/htmlvideoprojectExursion/" target="_blank">
+                    Excursion Project
+                  </a>
+                </h3>
+                <p class="text-body-secondary small">Developed a project page focused on excursions, showcasing destinations, travel options, and curated itineraries for short trips with responsive design.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">Responsive Design</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://pooja123-kothawade.github.io/htmlvideoprojectExursion/" target="_blank" class="project-link">
+                    <i class="bi bi-eye-fill"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/pooja123-kothawade" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 5: Colmar Academy -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="project-card w-100">
+              <div class="project-img" style="background-image: url('images/proj_5.png'); position: relative;">
+                <div class="img-overlay">
+                  <i class="bi bi-mortarboard-fill" style="font-size: 2rem; color: white;"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://pooja123-kothawade.github.io/ColmarAcademy/" target="_blank">
+                    Colmar Academy
+                  </a>
+                </h3>
+                <p class="text-body-secondary small">Designed and implemented a landing page for Colmar Academy focusing on layout, color, typography, and overall aesthetics based on provided wireframe.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">Flexbox</span>
+                  <span class="tech-tag">Responsive</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://pooja123-kothawade.github.io/ColmarAcademy/" target="_blank" class="project-link">
+                    <i class="bi bi-eye-fill"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/pooja123-kothawade" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 6: Java Mini Projects -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="project-card w-100">
+              <div class="project-img" style="background-image: url('images/download.jpeg'); position: relative;">
+                <div class="img-overlay">
+                  <i class="bi bi-calculator-fill" style="font-size: 2rem; color: white;"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/pooja123-kothawade/Temperature-Converter" target="_blank">
+                    Java Mini Projects
+                  </a>
+                </h3>
+                <p class="text-body-secondary small">Collection of Java applications including Calculator, Car Loan Payment Calculator (EMI prediction), MathMagic mathematical trick app, and Temperature Converter.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Core Java</span>
+                  <span class="tech-tag">OOP</span>
+                  <span class="tech-tag">Angular JS</span>
+                  <span class="tech-tag">UI/UX</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/pooja123-kothawade/Temperature-Converter" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> View Projects
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 7: NoBroker Webpage -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="project-card w-100">
+              <div class="project-img" style="background-image: url('images/pro6.png'); position: relative;">
+                <div class="img-overlay">
+                  <i class="bi bi-building" style="font-size: 2rem; color: white;"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/pooja123-kothawade/nobroker" target="_blank">
+                    NoBroker Webpage
+                  </a>
+                </h3>
+                <p class="text-body-secondary small">Created a responsive NoBroker webpage using HTML, CSS, and Bootstrap with modern UI design patterns and cross-browser compatibility.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">Bootstrap</span>
+                  <span class="tech-tag">Responsive</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/pooja123-kothawade/nobroker" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 8: Flipkart Login Webpage -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="project-card w-100">
+              <div class="project-img" style="background-image: url('images/flipkartlogin.png'); position: relative;">
+                <div class="img-overlay">
+                  <i class="bi bi-box-arrow-in-right" style="font-size: 2rem; color: white;"></i>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">
+                  <a href="https://github.com/pooja123-kothawade/loginpag" target="_blank">
+                    Flipkart Login Webpage
+                  </a>
+                </h3>
+                <p class="text-body-secondary small">Performed exploratory UI on User Experience using HTML5, CSS3 to improve customer experience with modern login interface design.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">UI/UX</span>
+                  <span class="tech-tag">Forms</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/pooja123-kothawade/loginpag" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub Repo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Statistics Banner -->
+        <div class="stats-banner">
+          <div class="row">
+            <div class="col-md-3 col-6">
+              <div class="stat-number">8+</div>
+              <div class="text-body-secondary small">Projects Completed</div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-number">4+</div>
+              <div class="text-body-secondary small">Technologies Used</div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-number">100%</div>
+              <div class="text-body-secondary small">Responsive Design</div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-number">Live</div>
+              <div class="text-body-secondary small">Demo Available</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- GitHub CTA -->
+  <div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="text-center p-5 rounded-4" 
+           style="background:  rgba(255, 255, 255, 0.15);
+                  backdrop-filter: blur(10px);
+                  border: 1px solid rgba(41, 119, 236, 0.3);
+                  border-radius: 20px;
+                  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);">
+        <i class="fab fa-github" style="font-size: 3rem; color: #2977ec;"></i>
+        <h3 class="mt-3 glow1">GitHub Repository</h3>
+        <p class="text-body-secondary">Discover all my coding projects and contributions</p>
+        <a href="https://github.com/pooja123-kothawade" target="_blank" 
+           class="btn btn-primary btn-lg px-5 py-3 mt-2 glow imageGlow">
+          <i class="fab fa-github me-2"></i> View All Projects
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+    </section>
+    
+  </section>
+  
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/footer-loader.js"></script>
+  
+</body>
+</html>

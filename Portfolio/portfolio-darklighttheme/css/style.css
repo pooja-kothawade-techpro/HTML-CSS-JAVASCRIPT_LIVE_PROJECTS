@@ -1,0 +1,281 @@
+/* --------------------------style.css--global-css----------------------------------------------------------------------------------------- */
+/* --------------------------------------spinner loader animation---------------------------------------------------- */
+/* Loader container overlay */
+#loader-container {
+  position: fixed;       /* cover entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;      /* solid black background */
+  z-index: 9999;         /* stay on top */
+}
+/* Loader animation */
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  width: 48px;
+  height: 48px;
+  border: 2px solid #eee;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  animation: rotation 2s ease-in-out infinite;
+}
+.loader::after {
+  border-color: #FF3D00;
+  animation-delay: 1s;
+}
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* -------------------------------background-for-about-section------------------------------------------------------ */
+
+/* ---------------------------------Fade-Out----------------------------------------------------------------------------------- */
+/* Fade-out effect for overlay */
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+@keyframes fadeOut {
+  to { opacity: 1;}
+}
+/* --------------------------------------------------------------------------------------------------------------------- */
+  /* -------------------------------------navbar-large-buttons----------------------------------------- */
+.btn{
+  font-size: 1rem;
+   font-weight: 500;
+}
+/* --------------------------------------------------------------------------------------------------------------------- */
+  /* --------------------------------------Wave animation---------------------------------------------------- */
+ @keyframes wave {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(25deg); }
+  40%  { transform: rotate(-15deg); }
+  60%  { transform: rotate(25deg); }
+  80%  { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+.wave {
+  display: inline-block;
+  transform-origin:bottom center; /* wrist stays fixed */
+  animation: wave 1.5s infinite ease-in-out;
+}
+/* --------------------------------------------------------------------------------------------------------------------- */
+ /* --------------------------------------TEXT animation---------------------------------------------------- */
+  .typewriter {
+      overflow: hidden; 
+      white-space: nowrap;
+      letter-spacing: .1em;
+     animation: typing 2.5s steps(30, end) infinite, blink-caret .5s step-end infinite;       
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+/* ---------------------------------------Fade-In----------------------------------------------------------------------------- */
+  /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0.1; transform: translateY(0); }
+      to { opacity: 1; transform: translateY(20px); }
+    }
+    .animated-text {
+      animation: fadeIn 2s ease-in-out infinite;
+    }
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* -----------------------------IMAGE ANIMATION-GLOW-&-BOUNCE-Together------------------------------------------------------------------------------------ */
+   /* bouncee animation */
+    @keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+.bounce {
+  animation: bounce 8s infinite;
+}
+/* Light theme: blue glow */
+html[data-bs-theme="light"] .bounce.imageGlow {
+  animation: bounce 8s infinite, imageGlowLight 2s ease-in-out;
+}
+@keyframes imageGlowLight {
+  0%   { filter: drop-shadow( 0 0 0px rgba(0, 0, 255, 0));transform: scale(1); }
+  50%  { filter: drop-shadow(0 0 25px rgba(41, 119, 236, 0.9));transform: scale(1.01); }
+  100% { filter: drop-shadow(0 0 0px rgba(0, 0, 255, 0));transform: scale(1); }
+}
+/* Dark theme: bright glow */
+html[data-bs-theme="dark"] .bounce.imageGlow {
+  animation: bounce 8s infinite, imageGlowDark 2s ease-in-out;
+}
+@keyframes imageGlowDark {
+  0%   { filter: drop-shadow(0 0 0px rgba(0, 255, 255, 0));transform: scale(1); }
+  50%  {filter: drop-shadow( 0 0 20px rgba(255, 255, 255, 0.8));transform: scale(1.01); }
+  100% { filter: drop-shadow( 0 0 0px rgba(0, 255, 255, 0));transform: scale(1); }
+}
+ .imageGlow:hover { /*image-glows-&-EnLarge-simultaneously */
+   animation: imageGlow 1.5s ease-in-out infinite; transform: scale(1.25); margin-left: 0.5rem; margin-right: 0.5rem;/* immediate enlargement */ 
+  }
+/* --------------------------------------------------------------------------------------------------------------------- */
+ /* -------------------------------- Reusable slideDown animation ------------------------------------------------------------------------------------- */
+.slidedown { 
+  animation: slideDown 1s ease-out; 
+}
+ @keyframes slideDown { 
+  from { transform: translateY(-100%); opacity: 0; 
+  } 
+  to { 
+    transform: translateY(0); opacity: 1; } }
+/* Left side animation */
+.slidedown-left {
+  flex: 1;
+  animation: slideLeft 1s ease-out forwards;
+}
+/* Right side animation */
+.slidedown-right {
+  flex: 1;
+  animation: slideRight 1s ease-out forwards;
+}
+/* Keyframes */
+@keyframes slideLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+/* Slide Up Animation */
+.slideup {
+  animation: slideUp 1s ease-out forwards;
+}
+/* Keyframes for Slide Up */
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0);  opacity: 1;  }
+}
+ /* --------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------glow-effect-------------------------------------------------------------------------- */
+/* Glow-effect for nav-items */
+/* Glow effect in dark mode */
+html[data-bs-theme="dark"] .glow:hover {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(248, 248, 248, 0.9); /* white glow */
+  background-color: #2977ec;
+  color: #fff;  font-weight: bolder; 
+}
+/* Glow effect in light mode */
+html[data-bs-theme="light"] .glow:hover   {
+    border-radius: 10px;
+ box-shadow: 0 0 25px rgba(41, 119, 236, 0.9); /* blue glow */
+  background-color: #2977ec;
+ color: #fff;  font-weight: bolder;
+}
+  /* glow-effect for nav-btn */
+.btn.glow {
+  color: #fff;
+  background-color: #2977ec; 
+  /* color: var(--bs-nav-link-color); use same color as nav links */
+}
+.btn.glow:hover{
+    font-weight: bolder;
+}
+ /* -------------------------------------------Reusable-GLOW-1-------------------------------------------------------------------------- */
+/* -------GLOW-1-------- */
+/* Glow1 effect for other background-color */
+.glow1:hover{ /*default for dark-theme*/
+    filter: drop-shadow( 0 0 15px rgba(248, 248, 248, 0.9)); /* white glow */
+  font-weight: bolder;
+}
+html[data-bs-theme="light"] .glow1:hover{
+  filter: drop-shadow(  0 0 25px rgba(41, 119, 236, 0.9)); /* blue glow */
+  font-weight: bolder;
+}
+/* seperate imageglow-effect for elements, which not bounce */
+html[data-bs-theme="light"] .imageGlow {
+  animation: imageGlowLight 2s ease-in-out;
+}
+
+html[data-bs-theme="dark"] .imageGlow {
+  animation: imageGlowDark 2s ease-in-out;
+}
+ /* --------------------------------------------------------------------------------------------------------------------- */
+/* --------------------------------------Social-Icons-bg----------------------------------------------------------------------------- */
+   /* Base icon styleCircular background wrapper#6c757d; */
+/* Icon sizing */
+#social-icons .social-icon {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;background-color:none;
+}
+/* Font Awesome LinkedIn icon */
+#social-icons i.social-icon, .contact-info i, .ftco-footer-social i{
+  font-size: 25px;display: flex;
+  color:  #0A66C2; /* LinkedIn blue */  justify-content: center;background-color: none;
+}
+
+#social-icons .btn, .contact-info .btn, .ftco-footer-social .btn{
+    width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;background-color: #fff;
+}
+  html[data-bs-theme="light"] #social-icons .btn{ 
+  color: #fff; border-color: #0A66C2; }
+ /* --------------------------------------------------------------------------------------------------------------------- */
+ /* ---------------------------------------Links-Style-Text-Decoration-None---------------------------------------------- */
+.icon-link, .ftco-footer-social a, .contact-info a{
+    text-decoration: none;
+}
+ /* ========== NEW HOVER EFFECT FOR .percentage CLASS ========== */
+    /* Enhanced hover effect for percentage elements - smooth scale + gradient + shadow */
+    .percentage {
+      display: inline-block;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      background: linear-gradient(135deg, rgba(41, 119, 236, 0.05), rgba(41, 119, 236, 0.01));
+    }
+    
+    /* Light mode hover: vibrant blue glow + scale effect */
+    html[data-bs-theme="light"] .percentage:hover {
+      transform: scale(1.08) translateY(-3px);
+      background: linear-gradient(135deg, #2977ec20, #0d6efd30);
+      color: #0a58ca !important;
+      box-shadow: 0 10px 20px -8px rgba(41, 119, 236, 0.5), 0 0 0 2px rgba(41, 119, 236, 0.2);
+      text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+      letter-spacing: 0.3px;
+      cursor: default;
+    }
+    
+    /* Dark mode hover: cool white-electric glow + scale */
+    html[data-bs-theme="dark"] .percentage:hover {
+      transform: scale(1.08) translateY(-3px);
+      background: linear-gradient(135deg, #ffffff20, #a0c4ff30);
+      color: #e0f0ff !important;
+      box-shadow: 0 10px 20px -5px rgba(255, 255, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.3);
+      text-shadow: 0 0 3px rgba(255,255,200,0.8);
+      letter-spacing: 0.3px;
+      cursor: default;
+    }
+    
+    /* Smooth transition for percentage elements also when theme changes */
+    .percentage {
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1), background 0.2s, color 0.2s;
+    }
+    
+    /* Ensure percentage container in education cards doesn't overflow */
+    .col-12 .percentage {
+      max-width: 100%;
+      word-break: keep-all;
+    }
